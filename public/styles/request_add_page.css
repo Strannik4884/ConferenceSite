@@ -1,0 +1,140 @@
+/* стиль обёркти блока добавления заявки */
+.request_add_page_wrapper {
+    padding-top: 50px;
+}
+
+/* стиль блока добавления заявки */
+.request_add_page_block {
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 700px;
+    height: 950px;
+    text-align: center;
+}
+
+/* стиль содержимого блока добавления заявки */
+.request_add_page_content{
+    margin: auto;
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-size: 35px;
+    line-height: 55px;
+    width: 560px;
+}
+
+/* ширина формы */
+#request_add_page_form_id{
+    width: 100%;
+}
+
+/* стиль заголовка блока добавления заявки */
+.request_add_page_form_title {
+    font-family: "Century Gothic";
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* стиль текста блока добавления заявки */
+.request_add_page_text {
+    font-family: "Century Gothic";
+    font-size: 25px;
+    color: white;
+    line-height: 1.4;
+}
+
+/* стиль выпадающего меню */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* стиль контейнера кнопки добавления заявки */
+.request_add_page_button_container {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* стиль кнопки добавления заявки */
+.request_add_page_button {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    height: 60px;
+    background-color: #333333;
+    border-radius: 27px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin: 20px auto auto;
+}
+
+/* стиль нажатой кнопки добавления заявки */
+.request_add_page_button:hover {
+    background-color: #444444;
+}
+
+/* стиль обёртки большого текста */
+.area-wrap-input{
+    height: 300px;
+}
+
+/* стиль большого текста */
+.area-input {
+    font-family: "Century Gothic";
+    line-height: 1.2;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    background: white;
+    height: 300px;
+    padding: 0 25px 0 25px;
+    border-radius: 20px;
+}
+
+/* стиль большого текста */
+textarea{
+    resize: none;
+}
+
+/* стиль формы загрузки файла */
+.input_file + .input_file_label {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.input_file {
+    display: none;
+}
+
+.input_file_label:hover {
+    color: #a2a8d0;
+}

@@ -1,0 +1,124 @@
+/* стиль обёркти блока регистрации */
+.registration_wrapper {
+    padding-top: 50px;
+}
+
+/* стиль блока регистрации */
+.registration_block {
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 700px;
+    height: 950px;
+    text-align: center;
+}
+
+/* стиль содержимого блока регистрации */
+.registration-content{
+    margin: auto;
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-size: 35px;
+    line-height: 55px;
+    width: 560px;
+}
+
+/* ширина формы */
+#registration-form{
+    width: 100%;
+}
+
+/* стиль заголовка формы регистрации */
+.registration-form-title {
+    font-family: "Century Gothic";
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* стиль текста формы */
+.registration_text {
+    font-family: "Century Gothic";
+    font-size: 25px;
+    color: white;
+    line-height: 1.4;
+}
+
+/* обёртка ввода */
+.wrap-input {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+/* стиль контейнера кнопки регистрации */
+.container-registration-button {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* обёркта чекбокса согласия на обработку данных */
+.wrap-consent{
+    padding-top: 10px;
+    color: white;
+    font-family: "Century Gothic";
+    font-size: 20px;
+}
+
+/* стиль кнопки регистрации */
+.registration-button {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    height: 60px;
+    background-color: #333333;
+    border-radius: 27px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin: 20px auto auto;
+}
+
+/* стиль нажатой кнопки регистрации */
+.registration-button:hover {
+    background-color: #444444;
+}
+
+/* стиль сообщения */
+.message{
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* цвет текста при ошибки */
+.error_message{
+    color: red;
+}
+
+/* цвет текста при оповещении */
+.info_message{
+    color: green;
+}

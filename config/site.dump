@@ -1,0 +1,260 @@
+--
+-- PostgreSQL database dump
+--
+
+SET statement_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET search_path = public, pg_catalog;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: account; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE account (
+    account_login character varying(100) NOT NULL,
+    account_password character varying(64) NOT NULL,
+    account_role character varying(10) NOT NULL
+);
+
+
+ALTER TABLE public.account OWNER TO postgres;
+
+--
+-- Name: request; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE request (
+    request_id integer NOT NULL,
+    user_id integer NOT NULL,
+    request_name character varying(100) NOT NULL,
+    request_theme character varying(100) NOT NULL,
+    request_text character varying(500) NOT NULL,
+    request_file_text character varying(1000) NOT NULL,
+    request_file_presentation character varying(1000) NOT NULL
+);
+
+
+ALTER TABLE public.request OWNER TO postgres;
+
+--
+-- Name: request_request_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE request_request_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.request_request_id_seq OWNER TO postgres;
+
+--
+-- Name: request_request_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE request_request_id_seq OWNED BY request.request_id;
+
+
+--
+-- Name: user; Type: TABLE; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE TABLE "user" (
+    user_id integer NOT NULL,
+    account_login character varying(100) NOT NULL,
+    user_name character varying(100) NOT NULL,
+    user_work_study character varying(100) NOT NULL,
+    user_position character varying(100) NOT NULL,
+    user_achievements character varying(500)
+);
+
+
+ALTER TABLE public."user" OWNER TO postgres;
+
+--
+-- Name: user_user_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE user_user_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.user_user_id_seq OWNER TO postgres;
+
+--
+-- Name: user_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE user_user_id_seq OWNED BY "user".user_id;
+
+
+--
+-- Name: request_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY request ALTER COLUMN request_id SET DEFAULT nextval('request_request_id_seq'::regclass);
+
+
+--
+-- Name: user_id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "user" ALTER COLUMN user_id SET DEFAULT nextval('user_user_id_seq'::regclass);
+
+
+--
+-- Data for Name: account; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY account (account_login, account_password, account_role) FROM stdin;
+odmin@admin.ru	$2y$10$zVsadTsxhTLEAHkCGACXQuyWfEaYG11wFUcVYvVm.phGmbA0yZ7kO	admin
+\.
+
+
+--
+-- Data for Name: request; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY request (request_id, user_id, request_name, request_theme, request_text, request_file_text, request_file_presentation) FROM stdin;
+\.
+
+
+--
+-- Name: request_request_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('request_request_id_seq', 1, false);
+
+
+--
+-- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY "user" (user_id, account_login, user_name, user_work_study, user_position, user_achievements) FROM stdin;
+\.
+
+
+--
+-- Name: user_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('user_user_id_seq', 1, false);
+
+
+--
+-- Name: pk_account; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY account
+    ADD CONSTRAINT pk_account PRIMARY KEY (account_login);
+
+
+--
+-- Name: pk_request; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY request
+    ADD CONSTRAINT pk_request PRIMARY KEY (request_id);
+
+
+--
+-- Name: pk_user; Type: CONSTRAINT; Schema: public; Owner: postgres; Tablespace: 
+--
+
+ALTER TABLE ONLY "user"
+    ADD CONSTRAINT pk_user PRIMARY KEY (user_id);
+
+
+--
+-- Name: account_pk; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX account_pk ON account USING btree (account_login);
+
+
+--
+-- Name: have_request_fk; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX have_request_fk ON request USING btree (user_id);
+
+
+--
+-- Name: have_user2_fk; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE INDEX have_user2_fk ON "user" USING btree (account_login);
+
+
+--
+-- Name: request_pk; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX request_pk ON request USING btree (request_id);
+
+
+--
+-- Name: user_pk; Type: INDEX; Schema: public; Owner: postgres; Tablespace: 
+--
+
+CREATE UNIQUE INDEX user_pk ON "user" USING btree (user_id);
+
+
+--
+-- Name: fk_request_have_requ_user; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY request
+    ADD CONSTRAINT fk_request_have_requ_user FOREIGN KEY (user_id) REFERENCES "user"(user_id) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: fk_user_have_user_account; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY "user"
+    ADD CONSTRAINT fk_user_have_user_account FOREIGN KEY (account_login) REFERENCES account(account_login) ON UPDATE RESTRICT ON DELETE RESTRICT;
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

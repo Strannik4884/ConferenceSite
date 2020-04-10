@@ -1,0 +1,82 @@
+/* стиль обёртки списка заявок */
+.request_wrapper{
+    padding-top: 50px;
+}
+
+/* стиль списка заявок */
+.request_list{
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 30px;
+    background-color: white;
+}
+
+/* стиль элемента списка заявок */
+.request_list_item{
+    width: 100%;
+    height: 280px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* стиль разделителя списка заявок */
+.request_list_splash{
+    height: 50px;
+}
+
+/* стиль заголовка элемента списка заявок */
+.request_list_item_title{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    padding-top: 5px;
+    padding-left: 30px;
+}
+
+/* стиль текста элемента списка заявок */
+.request_list_item_text{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    padding-top: 12px;
+    padding-left: 30px;
+}
+
+/* стиль большого теста элемента списка заявок */
+.request_list_item_textarea{
+    font-family: "Century Gothic";
+    font-size: 18px;
+    min-height: 70px;
+    padding-right: 30px;
+    display: block;
+    width: 100%;
+    border: none;
+}
+
+/* стиль ссылки элемента списка заявок */
+.request_list_item_link{
+    color: black;
+}
+
+/* стиль нажатой ссылки элемента списка заявок */
+.request_list_item_link:hover{
+    color: #a2a8d0;
+}
+
+/* стиль нумерации страниц */
+.request_page_numeration{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
+
+/* стиль кнопки номера страницы */
+.request_page_link{
+    padding-left: 10px;
+    color: white;
+}
+
+/* стиль нажатой кнопки номера страницы */
+.request_page_link:hover{
+    color: #a2a8d0;
+}

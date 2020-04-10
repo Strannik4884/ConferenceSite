@@ -1,0 +1,142 @@
+/* стиль обёртки страницы профиля */
+.profile_wrapper{
+    padding-top: 50px;
+}
+
+/* стиль обёртки содержимого страницы профиля */
+.profile_content_wrapper{
+    margin: 0 auto;
+    width: 80%;
+    border-radius: 30px;
+    background-color: white;
+}
+
+/* стиль содержимого страницы профиля */
+.profile_content{
+    width: 100%;
+    height: 400px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* стиль заголовка страницы профиля */
+.profile_title{
+    font-family: "Century Gothic";
+    font-size: 30px;
+    padding-top: 5px;
+    padding-left: 30px;
+}
+
+/* стиль текста страницы профиля */
+.profile_text{
+    font-family: "Century Gothic";
+    font-size: 20px;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+/* стиль почты страницы профиля */
+.profile_login_link{
+    color: black;
+}
+
+/* стиль нажатой почты страницы профиля */
+.profile_login_link:hover{
+    color: #a2a8d0;
+}
+
+/* стиль кнопок редактирования страницы профиля */
+.profile_edit_link{
+    padding-left: 15px;
+    color: black;
+}
+
+/* стиль нажатых кнопок редактирования страницы профиля */
+.profile_link:hover{
+    color: #a2a8d0;
+}
+
+/* стиль блока изменения страницы профиля */
+.change_block {
+    padding-top: 15px;
+    margin: 0 auto;
+    width: 700px;
+    height: 950px;
+    text-align: center;
+}
+
+/* стиль содержимого блока изменения страницы профиля */
+.change_content{
+    margin: auto;
+    font-family: "Century Gothic";
+    font-style: normal;
+    font-size: 35px;
+    line-height: 55px;
+    width: 560px;
+}
+
+/* ширина формы */
+#change_form{
+    width: 100%;
+}
+
+/* стиль заголовка блока изменения страницы профиля */
+.change_form_title {
+    font-family: "Century Gothic";
+    font-size: 30px;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+/* стиль текста блока изменения страницы профиля */
+.change_form_text {
+    font-family: "Century Gothic";
+    font-size: 25px;
+    color: white;
+    line-height: 1.4;
+}
+
+/* стиль контейнера кнопки блока изменения страницы профиля */
+.container_save_button {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* стиль кнопки блока изменения страницы профиля */
+.save_button {
+    font-family: "Century Gothic";
+    font-size: 20px;
+    color: #fff;
+    line-height: 1.2;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    height: 60px;
+    background-color: #333333;
+    border-radius: 27px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    margin: 20px auto auto;
+}
+
+/* стиль нажатой кнопки блока изменения страницы профиля */
+.save_button:hover {
+    background-color: #444444;
+}

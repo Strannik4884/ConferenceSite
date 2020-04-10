@@ -1,0 +1,20 @@
+# Запускаем движок замены
+RewriteEngine on
+# перенаправляем все запросы на домен с www чтобы избежать дублирования сайта
+RewriteCond %{HTTP_HOST} ^conference-site.local:8080$ [NC]
+RewriteRule ^(.*)$ http://www.conference-site.local:8080/$1 [R=301,L]
+# кастомные страницы для ошибок HTTP 403 и 404
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+ErrorDocument 500 /403.php
+# запрещаем просмотр содержимого папок
+Options -Indexes
+# делаем php - файлы без расширения .php в URL
+# если запрашиваемый объект не папка
+RewriteCond %{REQUEST_FILENAME} !-d
+# если запрашиваемый объект с дописанным расширением php
+RewriteCond %{REQUEST_FILENAME}\.php -f
+# делаем замену с дописыванием .php
+RewriteRule ^(.*)$ $1.php
+# убираем index.php и index в URL
+RewriteRule ^index.php$ / [QSA,R]
